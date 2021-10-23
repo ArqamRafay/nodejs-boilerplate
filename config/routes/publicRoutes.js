@@ -5,5 +5,4 @@ const publicRoutes = {
   'POST /validate': 'UserController.validate',
   'POST /loginCustomer': 'CustomerController.Customerlogin',
 };
-
 module.exports = publicRoutes;
