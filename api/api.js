@@ -14,6 +14,8 @@ const cors = require('cors');
 const config = require('../config/');
 const dbService = require('./services/db.service');
 const auth = require('./policies/auth.policy');
+// executing task
+require('./helpers/crons');
 
 // environment: development, staging, testing, production
 const environment = process.env.NODE_ENV;
@@ -49,6 +51,22 @@ app.all('/private/*', (req, res, next) => auth(req, res, next));
 // fill routes for express application
 app.use('/public', mappedOpenRoutes);
 app.use('/private', mappedAuthRoutes);
+
+
+
+// var CronJob = require('cron').CronJob;
+// var job = new CronJob(
+// 	'* * * * * *',
+// 	function() {
+// 		console.log('You will see this message every second');
+// 	},
+// 	null,
+// 	true,
+// 	'America/Los_Angeles'
+// );
+// // Use this if the 4th param is default value(false)
+// // job.start()
+
 
 server.listen(config.port, () => {
   // console.log(config)

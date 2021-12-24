@@ -3,8 +3,18 @@ const authService = require('../services/auth.service');
 const bcryptService = require('../services/bcrypt.service');
 
 const UserController = () => {
+  /* http://localhost:2017/public/register
+ Row -> JSON
+ {
+   "email": "abc@gmail.com",
+     "password": "1254",
+     "password2": "1254"
+   }
+*/
+
   const register = async (req, res) => {
-    console.log(req)
+    console.log(req.body)
+    console.log(req.body)
     const { body } = req;
 
     if (body.password === body.password2) {
@@ -27,7 +37,6 @@ const UserController = () => {
 
   // http://localhost:2017/public/login
   // INSERT INTO users(`email`,`password`) VALUES ('abc@gmail.com','1234')
-
   const login = async (req, res) => {
 
     const { email, password } = req.body;
