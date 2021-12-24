@@ -1,9 +1,9 @@
 const development = {
-  database: 'test',
-  username: 'root',
-  password: '',
+  database: 'testDB',
+  username: 'postgres',
+  password: 'admin',
   host: 'localhost',
-  dialect: 'mysql' ,
+  dialect: 'postgres' ,
   // dialect: 'sqlite' || 'mysql' || 'postgres',
 };
 
@@ -22,7 +22,6 @@ const testing = {
   host: 'localhost',
   dialect: 'mysql',
 };
-
 
 const production = {
   database: process.env.DB_NAME,
