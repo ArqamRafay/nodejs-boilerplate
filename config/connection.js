@@ -4,6 +4,7 @@ const development = {
   password: 'admin',
   host: 'localhost',
   dialect: 'postgres' ,
+  
   // dialect: 'sqlite' || 'mysql' || 'postgres',
 };
 
